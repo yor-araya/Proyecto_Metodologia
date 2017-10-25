@@ -18,7 +18,7 @@ public class Funciones {
     /* 
     Metodo para agregar datos.
     */
-     public boolean agregar(String datos, String tabla){
+     public boolean agregar(String tabla, String datos){
         boolean agregado = false;
         if(conect.agregar(tabla,datos)){
             agregado = true;
@@ -28,7 +28,7 @@ public class Funciones {
     /* 
     Metodo de edición de datos.
     */    
-    public boolean editar(String datos, String condicion, String tabla){
+    public boolean editar(String tabla, String datos, String condicion){
         boolean editado = false;//bandera para controlar la edición
         if(conect.editar(tabla,datos,condicion)){
             editado = true;//bandera para controlar la edición
@@ -38,7 +38,7 @@ public class Funciones {
     /* 
     Metodo de eliminicación de datos.
     */    
-    public boolean eliminar(String condicion, String tabla){
+    public boolean eliminar(String tabla,String condicion){
         boolean eliminado = false;//bandera para controlar la eliminación
         if(conect.eliminar(tabla,condicion)){
             eliminado = true;//bandera para controlar la eliminación
@@ -48,7 +48,7 @@ public class Funciones {
     /* 
     Metodo de impresión de los datos.
     */
-    public String [][] imprimir(String datos, String condicion, String order, String tabla){
+    public String [][] imprimir(String tabla, String datos, String condicion, String order){
         //Conexión a base de datos para la impresión de datos
         String [][] resultado = conect.imprimir(tabla,datos,condicion,order);
         for (int x=0; x < resultado.length; x++) {
